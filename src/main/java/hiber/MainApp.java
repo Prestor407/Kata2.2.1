@@ -27,12 +27,14 @@ public class MainApp {
       User userWithCar2 = new User("User6", "Lastname6", "user6@mail.ru");
       Car car1 = new Car("Kia", 15);
       Car car2 = new Car("Reno", 20);
+      Car car3 = new Car("BMW", 30);
 
       userWithCar1.setCar(car1);
       userWithCar2.setCar(car2);
 
       carService.add(car1);
       carService.add(car2);
+      carService.add(car3);
 
       userService.add(userWithCar1);
       userService.add(userWithCar2);
@@ -42,6 +44,8 @@ public class MainApp {
       for (User user : users) {
          System.out.println(user.toString());
       }
+
+      System.out.println(userService.getUserWithCarByModelAndSeries("BMW", 30));
 
       context.close();
    }
