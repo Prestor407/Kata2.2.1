@@ -8,6 +8,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
@@ -24,14 +25,14 @@ public class User {
     private Car car;
 
 
-    public User() {
-    }
+    public User() {}
 
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
+
 
     public Long getId() {
         return id;
